@@ -38,11 +38,9 @@
 
 
 
-{% hint style="info" %}
  **Referrence**
 
 [http://wit.nts-corp.com/2014/03/18/1116](http://wit.nts-corp.com/2014/03/18/1116)
-{% endhint %}
 
 
 

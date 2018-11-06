@@ -31,9 +31,7 @@ description: 자바스크립트 코드를 실행하는 프로그램 또는 인�
 
 
 
-{% hint style="info" %}
 reference
 
 [https://joshua1988.github.io/web-development/translation/javascript/how-js-works-inside-engine/](https://joshua1988.github.io/web-development/translation/javascript/how-js-works-inside-engine/)
-{% endhint %}
 

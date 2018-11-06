@@ -83,11 +83,9 @@ img {
 
 ![&amp;lt; CSSOM &#xD2B8;&#xB9AC; &amp;gt;](https://camo.githubusercontent.com/8d3471d1f38252fe785c3e558a229ab891f41fdb/68747470733a2f2f63646e2d696d616765732d312e6d656469756d2e636f6d2f6d61782f313630302f312a355955317375326d647a48455135694469734b5579772e706e67)
 
-{% hint style="info" %}
 CSSOM이 트리구조로 되어 있는 이유?
 
 자식 엘리먼트는 부모엘리먼트의 css의 영향을 받기 때문
-{% endhint %}
 
 ### 렌더 트리 구성
 
@@ -129,11 +127,9 @@ CSSOM 트리 + DOM 트리의 결합체
 
 HTML5에는 스크립트를 비동기로 표시하여 다른 스레드에서 파싱되고 실행될 수 있는 옵션을 추가했다.
 
-{% hint style="info" %}
 reference
 
 [https://github.com/codepink/codepink.github.com.wiki.git](https://github.com/codepink/codepink.github.com.wiki.git)
-{% endhint %}
 
 
 
