@@ -17,8 +17,6 @@ description: 랜더링 엔진의 주요 역할은 브라우저 화면에 요청�
 ![&amp;lt; &#xB80C;&#xB354;&#xB9C1; &#xACFC;&#xC815; &amp;gt;](https://camo.githubusercontent.com/43527d0e95b9fe6f9e8efb74cc19bb5c46b45207/68747470733a2f2f63646e2d696d616765732d312e6d656469756d2e636f6d2f6d61782f313630302f312a39623175454d635a4c57754750755963496e375a58512e706e67)
 
   
-
-
 1. HTML을 파싱해 DOM 트리를 구성한다.
 2. 렌더 트리를 구성한다.
 3. 렌더 트리를 레이아웃한다.

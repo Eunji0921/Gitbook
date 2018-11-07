@@ -6,7 +6,7 @@ description: 자바스크립트 코드를 실행하는 프로그램 또는 인�
 
 ### **종류**
 
-* \*\*\*\*[라이노](https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9D%B4%EB%85%B8_%28%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EC%97%94%EC%A7%84%29): 모질라 재단이 운영, 오픈 소스, 모두 자바로 개발
+* [라이노](https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9D%B4%EB%85%B8_%28%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EC%97%94%EC%A7%84%29): 모질라 재단이 운영, 오픈 소스, 모두 자바로 개발
 * [스파이더몽키](https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%8C%8C%EC%9D%B4%EB%8D%94%EB%AA%BD%ED%82%A4): 최초의 자바스크립트 엔진. [넷스케이프 내비게이터](https://ko.wikipedia.org/wiki/%EB%84%B7%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84_%EB%82%B4%EB%B9%84%EA%B2%8C%EC%9D%B4%ED%84%B0)에서 지원되며 오늘날은 [모질라 파이어폭스](https://ko.wikipedia.org/wiki/%EB%AA%A8%EC%A7%88%EB%9D%BC_%ED%8C%8C%EC%9D%B4%EC%96%B4%ED%8F%AD%EC%8A%A4)를 지원
 * [**V8**](https://ko.wikipedia.org/wiki/%ED%81%AC%EB%A1%AC_V8) - 오픈 소스. 덴마크에서 구글이 개발. 구글 크롬의 일부
 * [**웹킷**](https://ko.wikipedia.org/wiki/%EC%9B%B9%ED%82%B7) - 오픈 소스. Nitro가 홍보하고 [사파리](https://ko.wikipedia.org/wiki/%EC%82%AC%ED%8C%8C%EB%A6%AC_%28%EC%9B%B9_%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%29)용으로 [애플](https://ko.wikipedia.org/wiki/%EC%95%A0%ED%94%8C_%28%EA%B8%B0%EC%97%85%29)이 개발.
@@ -19,9 +19,7 @@ description: 자바스크립트 코드를 실행하는 프로그램 또는 인�
 
 ### 구조 \( V8기준 \) 
 
-
-
-![&amp;lt; V8 &#xC5D4;&#xC9C4; &#xAD6C;&#xC870; &amp;gt;](https://joshua1988.github.io/images/posts/web/translation/how-js-works/js-engine-structure.png)
+![구조](https://joshua1988.github.io/images/posts/web/translation/how-js-works/js-engine-structure.png)
 
   
 

@@ -1,8 +1,8 @@
-# 브라우저 구조
+### 브라우저 구조
 
-![&amp;lt; &#xBE0C;&#xB77C;&#xC6B0;&#xC800; &#xAD6C;&#xC870; &amp;gt;](../../../../.gitbook/assets/untitled-diagram-1.png)
+![<브라우저 구조>](../../../../.gitbook/assets/untitled-diagram-1.png)
 
-### Brouwser Structure
+## Browser Structure
 
 브라우저 주요 구성요소 7가지
 
