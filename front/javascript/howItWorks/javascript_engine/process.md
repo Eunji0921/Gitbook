@@ -2,11 +2,10 @@
 description: 자바스크립트의 런타임 처리과정에 대해 설명
 ---
 
-# 처리과정
+#### 처리과정
 
-> 자바스크립트 엔진은 하나의 쓰레드에서 동작한다.  Event Loop와 Queue를 사용해 비동기를 처리한다.
-
----
+> 자바스크립트 엔진은 하나의 쓰레드에서 동작한다.  
+> Event Loop와 Queue를 사용해 비동기를 처리한다.
 
 ![&amp;lt; &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xB7F0;&#xD0C0;&#xC784; &#xCC98;&#xB9AC;&#xACFC;&#xC815; &amp;gt;](http://sculove.github.io/blog/2018/01/18/javascriptflow/browser-structure.png)
 
