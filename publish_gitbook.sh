@@ -25,5 +25,3 @@ git push origin gh-pages
 
 # 다시 master 브랜치로 돌아온다.
 git checkout master
-
-#refernce - https://beomi.github.io/2017/11/20/Deploy-Gitbook-to-Github-Pages/
