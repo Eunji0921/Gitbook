@@ -1,0 +1,713 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>렌더링 엔진 동작 과정 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="랜더링 엔진의 주요 역할은 브라우저 화면에 요청된 페이지를 표시하는 것">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-theme-api/theme-api.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="rendering_perfomance.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    오오리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Front-end
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../../html-5/">
+            
+                <a href="../../../html-5/">
+            
+                    
+                    HTML 5
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../../html-5/websocket.html">
+            
+                <a href="../../../html-5/websocket.html">
+            
+                    
+                    Websocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../../../html-5/canvas.html">
+            
+                <a href="../../../html-5/canvas.html">
+            
+                    
+                    Canvas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../../../html-5/svg.html">
+            
+                <a href="../../../html-5/svg.html">
+            
+                    
+                    SVG
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Javascript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    작동원리
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1.1" data-path="../javascript_engine/">
+            
+                <a href="../javascript_engine/">
+            
+                    
+                    자바스크립트 엔진
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1.1.1" data-path="../javascript_engine/process.html">
+            
+                <a href="../javascript_engine/process.html">
+            
+                    
+                    처리과정
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    브라우저 구조
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.2.1.2.1" data-path="rendering_engine.html">
+            
+                <a href="rendering_engine.html">
+            
+                    
+                    렌더링 엔진 동작 과정
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.2.2" data-path="rendering_perfomance.html">
+            
+                <a href="rendering_perfomance.html">
+            
+                    
+                    렌더링 성능 최적화
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../ecmascript-2015/">
+            
+                <a href="../../ecmascript-2015/">
+            
+                    
+                    ECMAScript 2015
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.2.1" data-path="../../ecmascript-2015/array.html">
+            
+                <a href="../../ecmascript-2015/array.html">
+            
+                    
+                    Array.prototype
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../../design_pattern.html">
+            
+                <a href="../../design_pattern.html">
+            
+                    
+                    Design pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../../performance.html">
+            
+                <a href="../../performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../../typescript.html">
+            
+                <a href="../../../typescript.html">
+            
+                    
+                    Typescript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../../framework/">
+            
+                <a href="../../../framework/">
+            
+                    
+                    Framework
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../../../framework/angular.html">
+            
+                <a href="../../../framework/angular.html">
+            
+                    
+                    Angular
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../../../framework/react.html">
+            
+                <a href="../../../framework/react.html">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../../../framework/vue.html">
+            
+                <a href="../../../framework/vue.html">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="../../../framework/compare.html">
+            
+                <a href="../../../framework/compare.html">
+            
+                    
+                    비교
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../../network.html">
+            
+                <a href="../../../../network.html">
+            
+                    
+                    Network
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../../back-end/">
+            
+                <a href="../../../../back-end/">
+            
+                    
+                    Back-end
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../../back-end/java/">
+            
+                <a href="../../../../back-end/java/">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../../../../back-end/java/jvm.html">
+            
+                <a href="../../../../back-end/java/jvm.html">
+            
+                    
+                    JVM 구조
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >렌더링 엔진 동작 과정</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h4 id="&#xB80C;&#xB354;&#xB9C1;-&#xC5D4;&#xC9C4;-&#xB3D9;&#xC791;-&#xACFC;&#xC815;">&#xB80C;&#xB354;&#xB9C1; &#xC5D4;&#xC9C4; &#xB3D9;&#xC791; &#xACFC;&#xC815;</h4>
+<h5 id="&#xB80C;&#xB354;&#xB9C1;-&#xC5D4;&#xC9C4;-&#xC885;&#xB958;">&#xB80C;&#xB354;&#xB9C1; &#xC5D4;&#xC9C4; &#xC885;&#xB958;</h5>
+<ul>
+<li><strong>Gecko</strong> - &#x200A;Firefox</li>
+<li><strong>WebKit</strong> - &#x200A;Safari</li>
+<li><strong>Blink</strong> - &#x200A;Chrome, Opera (15 &#xBC84;&#xC804;&#xBD80;&#xD130;)</li>
+</ul>
+<h5 id="&#xB80C;&#xB354;&#xB9C1;-&#xACFC;&#xC815;">&#xB80C;&#xB354;&#xB9C1; &#xACFC;&#xC815;</h5>
+<p><img src="https://camo.githubusercontent.com/43527d0e95b9fe6f9e8efb74cc19bb5c46b45207/68747470733a2f2f63646e2d696d616765732d312e6d656469756d2e636f6d2f6d61782f313630302f312a39623175454d635a4c57754750755963496e375a58512e706e67" alt="&amp;lt; &#xB80C;&#xB354;&#xB9C1; &#xACFC;&#xC815; &amp;gt;"></p>
+<ol>
+<li>HTML&#xC744; &#xD30C;&#xC2F1;&#xD574; DOM &#xD2B8;&#xB9AC;&#xB97C; &#xAD6C;&#xC131;&#xD55C;&#xB2E4;.</li>
+<li>&#xB80C;&#xB354; &#xD2B8;&#xB9AC;&#xB97C; &#xAD6C;&#xC131;&#xD55C;&#xB2E4;.</li>
+<li>&#xB80C;&#xB354; &#xD2B8;&#xB9AC;&#xB97C; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xD55C;&#xB2E4;.</li>
+<li>&#xB80C;&#xB354; &#xD2B8;&#xB9AC;&#xB97C; &#xADF8;&#xB9B0;&#xB2E4;.</li>
+</ol>
+<h5 id="dom-&#xD2B8;&#xB9AC;-&#xAD6C;&#xC131;">DOM &#xD2B8;&#xB9AC; &#xAD6C;&#xC131;</h5>
+<pre><code class="lang-markup">&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;theme.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt; Hello, &lt;span&gt; friend! &lt;/span&gt; &lt;/p&gt;
+    &lt;div&gt; 
+      &lt;img src=&quot;smiley.gif&quot; alt=&quot;Smiley face&quot; height=&quot;42&quot; width=&quot;42&quot;&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>&#xC774; HTML&#xC5D0; &#xB300;&#xD55C; DOM &#xD2B8;&#xB9AC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xB2E4;.  </p>
+<p><img src="https://camo.githubusercontent.com/49a42ee85440c6cbedaa7761ae4116e5974051a4/68747470733a2f2f63646e2d696d616765732d312e6d656469756d2e636f6d2f6d61782f313630302f312a657a466f587167663931756d6c733946714f304873512e706e67" alt="&amp;lt; DOM &#xD2B8;&#xB9AC; &amp;gt;"></p>
+<h5 id="cssom-&#xD2B8;&#xB9AC;-&#xAD6C;&#xC131;">CSSOM &#xD2B8;&#xB9AC; &#xAD6C;&#xC131;</h5>
+<p>CSSOM&#xB294; <code>CSS &#xAC1D;&#xCCB4; &#xBAA8;&#xB378;(CSS Object Model)</code>&#xC744; &#xB9D0;&#xD55C;&#xB2E4;. &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xAC00; &#xD398;&#xC774;&#xC9C0; &#xB0B4; DOM&#xC744; &#xAD6C;&#xC131;&#xD558;&#xB294; &#xB3D9;&#xC548;, <code>head</code> &#xC601;&#xC5ED;&#xC5D0;&#xC11C; &#xC678;&#xBD80; CSS &#xC2A4;&#xD0C0;&#xC77C; &#xC2DC;&#xD2B8; <code>theme.css</code> &#xB97C; &#xCC38;&#xC870;&#xD558;&#xB294; <code>link</code> &#xD0DC;&#xADF8;&#xB97C; &#xB9CC;&#xB09C;&#xB2E4;. &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xADF8;&#xB9AC;&#xAE30; &#xC704;&#xD574; &#xD574;&#xB2F9; &#xD30C;&#xC77C;&#xC774; &#xD544;&#xC694;&#xD55C; &#xAC83;&#xC744; &#xC608;&#xC0C1;&#xD558;&#xBA74;&#xC11C; &#xC989;&#xC2DC; &#xC790;&#xC6D0; &#xC694;&#xCCAD;&#xC744; &#xD55C;&#xB2E4;.</p>
+<p><code>theme.css</code> &#xD30C;&#xC77C;&#xC774; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xB0B4;&#xC6A9;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD574;&#xBCF4;&#xC790;.  </p>
+<pre><code class="lang-css"><span class="hljs-selector-tag">body</span> { 
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+}
+
+<span class="hljs-selector-tag">p</span> { 
+  <span class="hljs-attribute">font-weight</span>: bold; 
+}
+
+<span class="hljs-selector-tag">span</span> { 
+  <span class="hljs-attribute">color</span>: red; 
+}
+
+<span class="hljs-selector-tag">p</span> <span class="hljs-selector-tag">span</span> { 
+  <span class="hljs-attribute">display</span>: none; 
+}
+
+<span class="hljs-selector-tag">img</span> { 
+  <span class="hljs-attribute">float</span>: right; 
+}
+</code></pre>
+<p>&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; &#xB3D9;&#xC791;&#xD560;&#xC218; &#xC788;&#xB294; CSSOM &#xD2B8;&#xB9AC;&#xB85C; &#xC7AC;&#xAD6C;&#xC131; &#xD55C;&#xB2E4;.</p>
+<p><img src="https://camo.githubusercontent.com/8d3471d1f38252fe785c3e558a229ab891f41fdb/68747470733a2f2f63646e2d696d616765732d312e6d656469756d2e636f6d2f6d61782f313630302f312a355955317375326d647a48455135694469734b5579772e706e67" alt="&amp;lt; CSSOM &#xD2B8;&#xB9AC; &amp;gt;"></p>
+<p>CSSOM&#xC774; &#xD2B8;&#xB9AC;&#xAD6C;&#xC870;&#xB85C; &#xB418;&#xC5B4; &#xC788;&#xB294; &#xC774;&#xC720;?</p>
+<p>&#xC790;&#xC2DD; &#xC5D8;&#xB9AC;&#xBA3C;&#xD2B8;&#xB294; &#xBD80;&#xBAA8;&#xC5D8;&#xB9AC;&#xBA3C;&#xD2B8;&#xC758; css&#xC758; &#xC601;&#xD5A5;&#xC744; &#xBC1B;&#xAE30; &#xB54C;&#xBB38;</p>
+<h5 id="&#xB80C;&#xB354;-&#xD2B8;&#xB9AC;-&#xAD6C;&#xC131;">&#xB80C;&#xB354; &#xD2B8;&#xB9AC; &#xAD6C;&#xC131;</h5>
+<p>CSSOM &#xD2B8;&#xB9AC; + DOM &#xD2B8;&#xB9AC;&#xC758; &#xACB0;&#xD569;&#xCCB4;</p>
+<p>&#xAC83;&#xC740; &#xC2DC;&#xAC01;&#xC801; &#xC694;&#xC18C;&#xB4E4;&#xC774; &#xD654;&#xBA74;&#xC5D0; &#xD45C;&#xC2DC;&#xB418;&#xB294; &#xC21C;&#xC11C;&#xB300;&#xB85C; &#xAD6C;&#xC131;&#xB41C; &#xD2B8;&#xB9AC;&#xC774;&#xB2E4;. &#xB80C;&#xB354; &#xD2B8;&#xB9AC;&#xB294; CSS&#xC640; &#xD568;&#xAED8; HTML&#xC744; &#xC2DC;&#xAC01;&#xC801;&#xC73C;&#xB85C; &#xD45C;&#xD604;&#xD55C; &#xAC83;&#xC774;&#xB2E4;. &#xC774; &#xD2B8;&#xB9AC;&#xC758; &#xBAA9;&#xC801;&#xC740; &#xC815;&#xD655;&#xD55C; &#xC21C;&#xC11C;&#xB85C; &#xCF58;&#xD150;&#xCE20;&#xB97C; &#xADF8;&#xB9B4; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD558;&#xB294; &#xAC83;</p>
+<p><img src="https://camo.githubusercontent.com/26bd9038788e24141d1cf3f57bed43f93705b25f/68747470733a2f2f63646e2d696d616765732d312e6d656469756d2e636f6d2f6d61782f313630302f312a5748525f30384144384150444954512d3443464467672e706e67" alt="&amp;lt; &#xB80C;&#xB354;&#xB9C1; &#xD2B8;&#xB9AC;\(CSSOM + DOM\) &amp;gt;"></p>
+<ul>
+<li>DOM &#xD2B8;&#xB9AC;&#xC758; &#xB8E8;&#xD2B8;&#xC5D0;&#xC11C;&#xBD80;&#xD130; &#xC2DC;&#xC791;&#xD574;, &#xAC01;&#xAC01;&#xC758; &#xC2DC;&#xAC01;&#xC801; &#xB178;&#xB4DC;&#xB4E4;&#xC744; &#xC21C;&#xD68C;&#xD55C;&#xB2E4;. <ul>
+<li>script, meta &#xD0DC;&#xADF8;&#xB294; &#xB178;&#xCD9C;&#xB418;&#xC9C0; &#xC54A;&#xACE0; &#xC0DD;&#xB7B5;</li>
+<li>CSS&#xC18D;&#xC131;&#xC5D0; &#xC758;&#xD574; &#xC0DD;&#xB7B5;&#xB418;&#xB294; &#xACBD;&#xC6B0; ( <code>span</code> &#xB178;&#xB4DC;&#xB294; <code>display: none</code> &#xC18D;&#xC131;&#xC744; &#xC124;&#xC815;&#xD558;&#xB294; &#xBA85;&#xD655;&#xD55C; &#xADDC;&#xCE59;&#xC5D0; &#xC758;&#xD574; &#xB80C;&#xB354; &#xD2B8;&#xB9AC;&#xC5D0;&#xC11C; &#xBCF4;&#xC774;&#xC9C0; &#xC54A;&#xC74C;)</li>
+</ul>
+</li>
+<li>&#xAC01;&#xAC01;&#xC758; &#xC2DC;&#xAC01;&#xC801;&#xC778; &#xB178;&#xB4DC;&#xB4E4;&#xB85C;&#xBD80;&#xD130; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB294; &#xC801;&#xC808;&#xD55C; CSSOM &#xADDC;&#xCE59;&#xC744; &#xCC3E;&#xC544; &#xC801;&#xC6A9;&#xD55C;&#xB2E4;.</li>
+<li>&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB294; &#xCF58;&#xD150;&#xCE20;&#xC640; &#xACC4;&#xC0B0;&#xB41C; &#xC2A4;&#xD0C0;&#xC77C;&#xACFC; &#xD568;&#xAED8; &#xC2DC;&#xAC01;&#xC801;&#xC778; &#xB178;&#xB4DC;&#xB4E4;&#xC744; &#xBCF4;&#xC5EC;&#xC900;&#xB2E4;.</li>
+</ul>
+<h5 id="&#xB80C;&#xB354;&#xD2B8;&#xB9AC;-&#xB808;&#xC774;&#xC544;&#xC6C3;--&#xD398;&#xC778;&#xD305;">&#xB80C;&#xB354;&#xD2B8;&#xB9AC; &#xB808;&#xC774;&#xC544;&#xC6C3; &amp; &#xD398;&#xC778;&#xD305;</h5>
+<ol>
+<li><p><strong>&#xB808;&#xC774;&#xC544;&#xC6C3;</strong></p>
+<p>&#xB80C;&#xB354;&#xB7EC;&#xAC00; &#xC0DD;&#xC131;&#xB418;&#xACE0; &#xD2B8;&#xB9AC;&#xC5D0; &#xCD94;&#xAC00;&#xB420; &#xB54C;, &#xC774; &#xB80C;&#xB354;&#xB7EC;&#xB294; &#xC704;&#xCE58;&#xC640; &#xD06C;&#xAE30;&#xB97C; &#xAC00;&#xC9C0;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xAC12;&#xB4E4;&#xC744; &#xACC4;&#xC0B0;&#xD558;&#xB294; &#xAC83;&#xC744; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC774;&#xB77C;&#xACE0; &#xBD80;&#xB978;&#xB2E4;.</p>
+<p>HTML&#xC740; &#xD750;&#xB984;-&#xAE30;&#xBC18;(flow-based) &#xB808;&#xC774;&#xC544;&#xC6C3; &#xBAA8;&#xB378;&#xC774;&#xB2E4;. &#xC774;&#xAC83;&#xC740; &#xB300;&#xBD80;&#xBD84; &#xB2E8;&#xC77C; &#xBC29;&#xD5A5;&#xC5D0;&#xC11C; &#xAE30;&#xD558;&#xD559;&#xC801; &#xAC12;&#xB4E4;&#xC744; &#xACC4;&#xC0B0;&#xD560; &#xC218; &#xC788;&#xC74C;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;. &#xC88C;&#xD45C;&#xACC4;&#xB294; &#xB8E8;&#xD2B8; &#xB80C;&#xB354;&#xB7EC;&#xB97C; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xD55C;&#xB2E4;. top, left &#xC88C;&#xD45C;&#xAC00; &#xC0AC;&#xC6A9;&#xB41C;&#xB2E4;.</p>
+<p>&#xB808;&#xC774;&#xC544;&#xC6C3;&#xC740; &#xC7AC;&#xADC0;&#xC801;&#xC778; &#xACFC;&#xC815;&#xC774;&#xB2E4;. &#xC774;&#xAC83;&#xC740; &#xB8E8;&#xD2B8; &#xB80C;&#xB354;&#xB7EC;(HTML &#xB3C4;&#xD050;&#xBA3C;&#xD2B8; &#xC5D8;&#xB9AC;&#xBA3C;&#xD2B8;&#xC5D0;&#xC11C; <code>&lt;html&gt;</code>&#xC5D0; &#xD574;&#xB2F9;)&#xC5D0;&#xC11C; &#xC2DC;&#xC791;&#xB41C;&#xB2E4;. &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC740; &#xBD80;&#xBD84; &#xB610;&#xB294; &#xC804;&#xCCB4; &#xB80C;&#xB354;&#xB7EC;&#xC758; &#xACC4;&#xCE35;&#xC744; &#xD1B5;&#xACFC;&#xD558;&#xBA74;&#xC11C; &#xC7AC;&#xADC0;&#xC801;&#xC73C;&#xB85C; &#xBC18;&#xBCF5;&#xB418;&#xACE0;, &#xC774;&#xB97C; &#xD544;&#xC694;&#xB85C; &#xD558;&#xB294; &#xB80C;&#xB354;&#xB7EC;&#xC758; &#xAE30;&#xD558;&#xD559;&#xC801; &#xC815;&#xBCF4;&#xB97C; &#xACC4;&#xC0B0;&#xD55C;&#xB2E4;.</p>
+</li>
+<li><p><strong>&#xD398;&#xC778;&#xD305;</strong></p>
+<p>&#xB80C;&#xB354;&#xB9C1; &#xC5D4;&#xC9C4;&#xC740; &#xAC00;&#xB2A5;&#xD55C; &#xD55C; &#xBE60;&#xB974;&#xAC8C; &#xD654;&#xBA74;&#xC0C1;&#xC5D0; &#xCF58;&#xD150;&#xCE20;&#xB97C; &#xBCF4;&#xC5EC;&#xC904; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xC2DC;&#xB3C4;&#xD560; &#xAC83;&#xC774;&#xB2E4;. &#xC774; &#xB80C;&#xB354;&#xB9C1; &#xC5D4;&#xC9C4;&#xC740; &#xB80C;&#xB354; &#xD2B8;&#xB9AC;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xD558;&#xAE30; &#xC704;&#xD574; &#xBAA8;&#xB4E0; HTML&#xC774; &#xD30C;&#xC2F1;&#xB420; &#xB54C;&#xAE4C;&#xC9C0; &#xAE30;&#xB2E4;&#xB9AC;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;. &#xCF58;&#xD150;&#xCE20; &#xC77C;&#xBD80;&#xB294; &#xD30C;&#xC2F1;&#xB418;&#xACE0; &#xD45C;&#xC2DC;&#xB418;&#xBA70;, &#xB098;&#xBA38;&#xC9C0; &#xCF58;&#xD150;&#xCE20; &#xD56D;&#xBAA9;&#xB4E4;&#xC744; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC0C1;&#xC5D0;&#xC11C; &#xACC4;&#xC18D; &#xCC98;&#xB9AC;&#xB41C;&#xB2E4;.</p>
+</li>
+</ol>
+<h5 id="&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;--&#xC2A4;&#xD0C0;&#xC77C;&#xC2DC;&#xD2B8;-&#xCC98;&#xB9AC;-&#xC21C;&#xC11C;">&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &amp; &#xC2A4;&#xD0C0;&#xC77C;&#xC2DC;&#xD2B8; &#xCC98;&#xB9AC; &#xC21C;&#xC11C;</h5>
+<p>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; &#xD30C;&#xC11C;&#xAC00; <code>&lt;script&gt;</code> &#xD0DC;&#xADF8;&#xC5D0; &#xB3C4;&#xB2EC;&#xD588;&#xC744; &#xB54C; &#xC989;&#xC2DC; &#xD30C;&#xC2F1;&#xB418;&#xACE0; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;. &#xBB38;&#xC11C;&#xC758; &#xD30C;&#xC2F1;&#xC740; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC2E4;&#xD589;&#xC774; &#xB05D;&#xB0A0; &#xB54C;&#xAE4C;&#xC9C0; &#xB300;&#xAE30;&#xD55C;&#xB2E4;. &#xC774;&#xAC83;&#xC740; &#xCC98;&#xB9AC;&#xAC00; <strong>&#xB3D9;&#xAE30;&#xC801;</strong> &#xC784;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;.</p>
+<p>&#xB9CC;&#xC57D; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC678;&#xBD80; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB77C;&#xBA74;, &#xBA3C;&#xC800; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC5D0;&#xC11C; &#xB3D9;&#xAE30;&#xC801;&#xC73C;&#xB85C; &#xC774; &#xD30C;&#xC77C;&#xC744; &#xAC00;&#xC838;&#xC640;&#xC57C; &#xD55C;&#xB2E4;. &#xD30C;&#xC77C;&#xC744; &#xBAA8;&#xB450; &#xAC00;&#xC838;&#xC624;&#xAE30; &#xC804;&#xAE4C;&#xC9C0; &#xBAA8;&#xB4E0; &#xD30C;&#xC2F1; &#xACFC;&#xC815;&#xC740; &#xC815;&#xC9C0;&#xB41C;&#xB2E4;.</p>
+<p>HTML5&#xC5D0;&#xB294; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xBE44;&#xB3D9;&#xAE30;&#xB85C; &#xD45C;&#xC2DC;&#xD558;&#xC5EC; &#xB2E4;&#xB978; &#xC2A4;&#xB808;&#xB4DC;&#xC5D0;&#xC11C; &#xD30C;&#xC2F1;&#xB418;&#xACE0; &#xC2E4;&#xD589;&#xB420; &#xC218; &#xC788;&#xB294; &#xC635;&#xC158;&#xC744; &#xCD94;&#xAC00;&#xD588;&#xB2E4;.</p>
+<p>reference</p>
+<p><a href="https://github.com/codepink/codepink.github.com.wiki.git" target="_blank">https://github.com/codepink/codepink.github.com.wiki.git</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"description":"랜더링 엔진의 주요 역할은 브라우저 화면에 요청된 페이지를 표시하는 것","title":"렌더링 엔진 동작 과정","level":"1.2.2.1.2.1","depth":5,"next":{"title":"렌더링 성능 최적화","level":"1.2.2.1.2.2","depth":5,"path":"front/javascript/howItWorks/browser_structure/rendering_perfomance.md","ref":"front/javascript/howItWorks/browser_structure/rendering_perfomance.md","articles":[]},"previous":{"title":"브라우저 구조","level":"1.2.2.1.2","depth":4,"path":"front/javascript/howItWorks/browser_structure/README.md","ref":"front/javascript/howItWorks/browser_structure/README.md","articles":[{"title":"렌더링 엔진 동작 과정","level":"1.2.2.1.2.1","depth":5,"path":"front/javascript/howItWorks/browser_structure/rendering_engine.md","ref":"front/javascript/howItWorks/browser_structure/rendering_engine.md","articles":[]},{"title":"렌더링 성능 최적화","level":"1.2.2.1.2.2","depth":5,"path":"front/javascript/howItWorks/browser_structure/rendering_perfomance.md","ref":"front/javascript/howItWorks/browser_structure/rendering_perfomance.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-api"],"pluginsConfig":{"theme-api":{"languages":[],"split":true,"theme":"dark"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"front/javascript/howItWorks/browser_structure/rendering_engine.md","mtime":"2018-12-10T14:30:14.600Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T15:24:56.030Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-theme-api/theme-api.js"></script>
+        
+    
+
+    </body>
+</html>
+
